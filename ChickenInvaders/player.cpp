@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 #include <QDebug>
 
-Player::Player(): QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.png")) { }
+Player::Player(): QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.png").scaled(70, 80)) { }
 
 void Player::keyPressEvent(QKeyEvent *event)
 {

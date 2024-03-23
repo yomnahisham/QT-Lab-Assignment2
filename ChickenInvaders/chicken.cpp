@@ -6,7 +6,7 @@
 #include <QGraphicsPixmapItem>
 #include <player.h>
 
-Chicken::Chicken() : QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/PinkcChick .png").scaled(50, 60))
+Chicken::Chicken() : QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/PinkcChick .png").scaled(60, 70))
 {
     // *******  Setting the postion of the enemy within the view dimensions ********
     int random_number = rand() % 900;
@@ -15,7 +15,7 @@ Chicken::Chicken() : QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/Pin
     // *******  Moving the enemies downwards automatically every 50 milli second ********
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT (move()));
-    timer->start(50);
+    timer->start(30);
  }
 
 
