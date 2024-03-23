@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     player->setFocus();
 
     // *******  Adjust the location of the Player (middle of the screen) ********
-    //player->setPos(view->width()/2, view->height()-player->y()/2);
+    player->setPos(view->width()/2, view->height()-player->y()/2);
     scene->addItem(player);
 
     // *******   Assign scene to the view   ***************

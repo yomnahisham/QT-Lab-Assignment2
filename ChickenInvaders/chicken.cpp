@@ -9,7 +9,7 @@
 Chicken::Chicken() : QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/PinkcChick .png").scaled(50, 60))
 {
     // *******  Setting the postion of the enemy within the view dimensions ********
-    int random_number = rand() % 700;
+    int random_number = rand() % 900;
     setPos(random_number,0);
 
     // *******  Moving the enemies downwards automatically every 50 milli second ********
@@ -23,7 +23,7 @@ Chicken::Chicken() : QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/Pin
 void Chicken:: move()
 {
     setPos(x(),y()+5);
-    if(y()+100>800)
+    if(y()>800)
     {
         scene()->removeItem(this);
         delete this;
