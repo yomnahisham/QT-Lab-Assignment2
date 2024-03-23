@@ -6,7 +6,7 @@
 #include <QGraphicsPixmapItem>
 #include <player.h>
 
-Chicken::Chicken() : QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/PinkcChick .png"))
+Chicken::Chicken() : QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/PinkcChick .png").scaled(50, 60))
 {
     // *******  Setting the postion of the enemy within the view dimensions ********
     int random_number = rand() % 700;
