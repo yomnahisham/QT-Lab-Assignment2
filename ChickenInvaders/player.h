@@ -12,16 +12,10 @@ private:
     QGraphicsTextItem* healthText;
     QGraphicsTextItem* scoreText;
 public:
-    int health;
-    int score;
-    Player(QGraphicsTextItem* healthTextItem, QGraphicsTextItem* scoreTextItem);
+    Player();
     void keyPressEvent(QKeyEvent * event);
-    void decrease();
-    void increase();
-    void showGameOver();
 public slots:
     void createChicken();
-
 };
 
 

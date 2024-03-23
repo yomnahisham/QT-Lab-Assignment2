@@ -55,7 +55,8 @@ OBJECTS_DIR   = ./
 SOURCES       = ../ChickenInvaders/bullet.cpp \
 		../ChickenInvaders/chicken.cpp \
 		../ChickenInvaders/main.cpp \
-		../ChickenInvaders/player.cpp qrc_Resources.cpp \
+		../ChickenInvaders/player.cpp \
+		../ChickenInvaders/status.cpp qrc_Resources.cpp \
 		moc_bullet.cpp \
 		moc_chicken.cpp \
 		moc_player.cpp
@@ -63,6 +64,7 @@ OBJECTS       = bullet.o \
 		chicken.o \
 		main.o \
 		player.o \
+		status.o \
 		qrc_Resources.o \
 		moc_bullet.o \
 		moc_chicken.o \
@@ -252,10 +254,12 @@ DIST          = ../../../../Qt/6.7.0/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/lex.prf \
 		../ChickenInvaders/ChickenInvaders.pro ../ChickenInvaders/bullet.h \
 		../ChickenInvaders/chicken.h \
-		../ChickenInvaders/player.h ../ChickenInvaders/bullet.cpp \
+		../ChickenInvaders/player.h \
+		../ChickenInvaders/status.h ../ChickenInvaders/bullet.cpp \
 		../ChickenInvaders/chicken.cpp \
 		../ChickenInvaders/main.cpp \
-		../ChickenInvaders/player.cpp
+		../ChickenInvaders/player.cpp \
+		../ChickenInvaders/status.cpp
 QMAKE_TARGET  = ChickenInvaders
 DESTDIR       = 
 TARGET        = ChickenInvaders.app/Contents/MacOS/ChickenInvaders
@@ -682,8 +686,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../ChickenInvaders/Resources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../ChickenInvaders/bullet.h ../ChickenInvaders/chicken.h ../ChickenInvaders/player.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../ChickenInvaders/bullet.cpp ../ChickenInvaders/chicken.cpp ../ChickenInvaders/main.cpp ../ChickenInvaders/player.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../ChickenInvaders/bullet.h ../ChickenInvaders/chicken.h ../ChickenInvaders/player.h ../ChickenInvaders/status.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../ChickenInvaders/bullet.cpp ../ChickenInvaders/chicken.cpp ../ChickenInvaders/main.cpp ../ChickenInvaders/player.cpp ../ChickenInvaders/status.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -870,6 +874,30 @@ player.o: ../ChickenInvaders/player.cpp ../ChickenInvaders/player.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player.o ../ChickenInvaders/player.cpp
+
+status.o: ../ChickenInvaders/status.cpp ../ChickenInvaders/status.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsTextItem \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		../ChickenInvaders/player.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsItem \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		../ChickenInvaders/chicken.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QTimer \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qtimer.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QLabel \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qlabel.h \
+		../ChickenInvaders/bullet.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QImage \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o status.o ../ChickenInvaders/status.cpp
 
 qrc_Resources.o: qrc_Resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_Resources.o qrc_Resources.cpp

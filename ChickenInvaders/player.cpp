@@ -8,9 +8,7 @@
 #include <QDebug>
 
 
-Player::Player(QGraphicsTextItem* healthTextItem, QGraphicsTextItem* scoreTextItem)
-    : health(3), score(0), healthText(healthTextItem), scoreText(scoreTextItem),
-    QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.png").scaled(70, 80)) {}
+Player::Player(): QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.png").scaled(70, 80)) {}
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
@@ -43,26 +41,4 @@ void Player::createChicken(){
 
 }
 
-void Player::decrease(){
-    health--;
-    score-=100;
-    healthText->setPlainText(QString("Health: ") + QString::number(health));
-    healthText->setDefaultTextColor(Qt::red);
-    if (health < 1) {
-        showGameOver();
-    }
-}
-
-void Player::increase() {
-        score+=100;
-        scoreText->setPlainText(QString("Score: ") + QString::number(score));
-        scoreText->setDefaultTextColor(Qt::blue);
-}
-
-void Player::showGameOver() {
-    QMessageBox* msg = new QMessageBox;
-    msg->setText("Game Over! Your Score: " + QString::number(score));
-    msg->setWindowTitle("Game Over");
-    msg->exec();
-}
 

@@ -1,4 +1,5 @@
 #include "player.h"
+#include "status.h"
 #include <QApplication>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsTextItem>
@@ -27,15 +28,17 @@ int main(int argc, char *argv[])
     scene->setSceneRect(0, 0, 1000, 800);
 
     // initializing health and score
-    QGraphicsTextItem* healthTextItem = new QGraphicsTextItem("Health: 3");
-    QGraphicsTextItem* scoreTextItem = new QGraphicsTextItem("Score: 0");
-    healthTextItem->setPos(10, 10);
-    scoreTextItem->setPos(10, 30);
-    scene->addItem(healthTextItem);
-    scene->addItem(scoreTextItem);
+    QGraphicsTextItem* scoreText = new QGraphicsTextItem();
+    QGraphicsTextItem* healthText = new QGraphicsTextItem();
+
+    scene->addItem(scoreText);
+    scene->addItem(healthText);
+
+    Status::setHealthText(healthText);
+    Status::setScoreText(scoreText);
 
     // creating the player
-    Player *player = new Player(healthTextItem, scoreTextItem);
+    Player *player = new Player();
     player->setPos(scene->width()/2, (scene->height() - player->pixmap().height())/2);
 
     // focus on player

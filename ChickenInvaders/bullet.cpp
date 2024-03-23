@@ -1,4 +1,5 @@
 #include <bullet.h>
+#include <status.h>
 #include <chicken.h>
 #include <player.h>
 #include <QGraphicsScene>
@@ -23,6 +24,7 @@ void Bullet:: move()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for (int i=0; i< colliding_items.size(); i++){
         if (typeid(*(colliding_items[i])) == typeid(Chicken)){
+            Status::increase();
             scene () -> removeItem(colliding_items[i]);
             scene () -> removeItem(this);
             delete colliding_items[i];

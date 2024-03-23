@@ -12,12 +12,14 @@ SOURCES += \
     bullet.cpp \
     chicken.cpp \
     main.cpp \
-    player.cpp
+    player.cpp \
+    status.cpp
 
 HEADERS += \
     bullet.h \
     chicken.h \
-    player.h
+    player.h \
+    status.h
 
 FORMS +=
 
