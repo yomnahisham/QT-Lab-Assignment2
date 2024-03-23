@@ -3,9 +3,13 @@
 #include "chicken.h"
 #include <QKeyEvent>
 #include <QGraphicsScene>
+#include <QGraphicsTextItem>
+#include <QMessageBox>
 #include <QDebug>
 
-Player::Player(): QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.png").scaled(70, 80)) { }
+Player::Player(QGraphicsTextItem* healthTextItem, QGraphicsTextItem* scoreTextItem)
+    : health(3), score(0), healthText(healthTextItem), scoreText(scoreTextItem),
+    QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.png").scaled(70, 80)) {}
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
