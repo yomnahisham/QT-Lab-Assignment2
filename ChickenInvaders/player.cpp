@@ -21,7 +21,7 @@ void Player::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key()== Qt::Key_Right)
 
-    { if(x()+100<800)
+    { if(x()+100<1000)
             setPos(x()+10,y());
     }
     else if(event->key()== Qt::Key_Space)

@@ -35,21 +35,19 @@ void Status::decrease() {
     }
     healthTextItem->setPlainText("Health: " + QString::number(health));
     scoreTextItem->setPlainText("Score: " + QString::number(score));
-    QGraphicsScene* s = healthTextItem->scene();
+    QGraphicsScene* healthscene = healthTextItem->scene();
 
     if(health == 0) {
-        s->clear();
+        healthscene->clear();
         QGraphicsTextItem* gameOverText = new QGraphicsTextItem();
         gameOverText->setDefaultTextColor(Qt::red);
         gameOverText->setPlainText("GAME OVER!");
-        gameOverText->setPos(s->width() / 2 - 180, s->height() / 2 - 48);
+        gameOverText->setPos(healthscene->width() / 2, healthscene->height() / 2);
 
-        s->addItem(gameOverText);
+        healthscene->addItem(gameOverText);
 
         QMessageBox* msg = new QMessageBox();
-        msg->setWindowTitle(QString("GET BETTER."));
-        msg->setMinimumHeight(500);
-        msg->setMinimumWidth(600);
+        msg->setWindowTitle(QString("Game Over"));
         msg->setText(QString("GAME OVER. Your score was ") + QString::number(score));
         msg->exec();
     }
