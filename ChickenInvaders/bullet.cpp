@@ -1,4 +1,4 @@
-#include"bullet.h"
+#include <bullet.h>
 #include <chicken.h>
 #include <player.h>
 #include <QGraphicsScene>
@@ -14,6 +14,15 @@ Bullet::Bullet() : QObject(), QGraphicsPixmapItem()
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
     timer->start(50);
 }
+
+Bullet::Bullet(const QPointF& pos, const QImage& image, QGraphicsItem* parent)
+    : QGraphicsPixmapItem(parent),
+    m_position(pos),
+    m_image(image),
+    m_speed(10.0) {
+    setPixmap(QPixmap::fromImage(image));
+}
+
 
 void Bullet:: move()
 {
@@ -34,4 +43,3 @@ void Bullet:: move()
         }
     }
 }
-

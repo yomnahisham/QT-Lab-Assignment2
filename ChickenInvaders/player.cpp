@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 #include <QDebug>
 
-Player::Player(): QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.png").scaled(50, 50)) { }
+Player::Player(): QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.png").scaled(60, 70)) { }
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
@@ -31,8 +31,9 @@ void Player::keyPressEvent(QKeyEvent *event)
 
 }
 
-void Player::createChicken()
-{ Chicken* chick = new Chicken();
+void Player::createChicken(){
+
+    Chicken* chick = new Chicken();
     scene()->addItem(chick);
 
 }
