@@ -1,4 +1,5 @@
 #include "chicken.h"
+#include "status.h"
 #include <QGraphicsScene>
 #include <stdlib.h> // rand() -> to generate really large integer
 #include <QTimer>
@@ -25,6 +26,7 @@ void Chicken:: move()
     setPos(x(),y()+5);
     if(y()>800)
     {
+        Status::decrease();
         scene()->removeItem(this);
         delete this;
     }
