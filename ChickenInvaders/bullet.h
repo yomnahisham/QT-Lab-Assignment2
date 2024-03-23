@@ -12,14 +12,7 @@ class Bullet : public QObject, public QGraphicsPixmapItem {
 
 public:
     Bullet(const QPointF& pos, const QImage& image, QGraphicsItem* parent = nullptr);
-
     Bullet();
-
-
-private:
-    QPointF m_position;
-    QImage m_image;
-    qreal m_speed;
 
 public slots:
     void move();

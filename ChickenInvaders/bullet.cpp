@@ -12,15 +12,6 @@ Bullet::Bullet() : QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/red_l
     timer->start(50);
 }
 
-Bullet::Bullet(const QPointF& pos, const QImage& image, QGraphicsItem* parent)
-    : QGraphicsPixmapItem(parent),
-    m_position(pos),
-    m_image(image),
-    m_speed(10.0) {
-    setPixmap(QPixmap::fromImage(image));
-}
-
-
 void Bullet:: move()
 {
     setPos(x(),y()-10);

@@ -9,13 +9,18 @@ class Player: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 private:
-    int health;
-    int score;
     QGraphicsTextItem* healthText;
     QGraphicsTextItem* scoreText;
 public:
-    Player();
+    int health;
+    int score;
+    Player(QGraphicsTextItem* healthTextItem, QGraphicsTextItem* scoreTextItem);
     void keyPressEvent(QKeyEvent * event);
+    void decrease();
+    void increase();
+    void showGameOver();
+signals:
+    void gameOver(int score);
 public slots:
     void createChicken();
 

@@ -41,3 +41,19 @@ void Player::createChicken(){
     scene()->addItem(chick);
 
 }
+
+void Player::decrease(){
+    health--;
+    healthText->setPlainText(QString("Health: ") + QString::number(health));
+    healthText->setDefaultTextColor(Qt::red);
+    if (health < 1) {
+        emit gameOver(score);
+    }
+}
+
+void Player::increase() {
+    score++;
+    scoreText->setPlainText(QString("Score: ") + QString::number(score));
+    scoreText->setDefaultTextColor(Qt::blue);
+}
+
