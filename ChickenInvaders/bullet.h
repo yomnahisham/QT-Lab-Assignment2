@@ -22,7 +22,6 @@ private:
     qreal m_speed;
 
 public slots:
-    void handleCollision();
     void move();
 };
 

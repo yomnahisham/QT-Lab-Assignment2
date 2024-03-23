@@ -5,11 +5,8 @@
 #include <QTimer>
 #include <QList>
 
-Bullet::Bullet() : QObject(), QGraphicsPixmapItem()
+Bullet::Bullet() : QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/red_laser.png"))
 {
-    QPixmap bulletImage(":/resources/img/red_laser.png");
-    setPixmap(bulletImage.scaled(40, 50));
-
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
     timer->start(50);

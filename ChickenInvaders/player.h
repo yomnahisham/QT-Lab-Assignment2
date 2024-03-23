@@ -3,7 +3,7 @@
 #define PLAYER_H
 #include <QGraphicsItem>
 #include <QObject>
-#include <chicken.h>
+#include "chicken.h"
 
 class Player: public QObject, public QGraphicsPixmapItem
 {

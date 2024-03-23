@@ -722,27 +722,40 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_Resources.cpp
 qrc_Resources.cpp: ../ChickenInvaders/Resources.qrc \
 		../../../../Qt/6.7.0/macos/libexec/rcc \
+		../ChickenInvaders/img/PinkcChick\ .png \
 		../ChickenInvaders/img/red_laser.png \
-		../ChickenInvaders/img/ship.png \
-		../ChickenInvaders/img/chicken.png
+		../ChickenInvaders/img/ship.png
 	/Users/yomnahisham/Qt/6.7.0/macos/libexec/rcc -name Resources --no-zstd ../ChickenInvaders/Resources.qrc -o qrc_Resources.cpp
 
 compiler_moc_header_make_all: moc_bullet.cpp moc_chicken.cpp moc_mainwindow.cpp moc_player.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_bullet.cpp moc_chicken.cpp moc_mainwindow.cpp moc_player.cpp
 moc_bullet.cpp: ../ChickenInvaders/bullet.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsItem \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QImage \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
+		../ChickenInvaders/player.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsItem \
+		../ChickenInvaders/chicken.h \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QTimer \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qtimer.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QLabel \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qlabel.h \
 		../../../../Qt/6.7.0/macos/libexec/moc
 	/Users/yomnahisham/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/yomnahisham/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/yomnahisham/Documents/GitHub/QT-Lab-Assignment2/ChickenInvaders -I/Users/yomnahisham/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/yomnahisham/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/yomnahisham/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/yomnahisham/Qt/6.7.0/macos/lib ../ChickenInvaders/bullet.h -o moc_bullet.cpp
 
 moc_chicken.cpp: ../ChickenInvaders/chicken.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsRectItem \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QTimer \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qtimer.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QLabel \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qlabel.h \
 		../../../../Qt/6.7.0/macos/libexec/moc
 	/Users/yomnahisham/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/yomnahisham/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/yomnahisham/Documents/GitHub/QT-Lab-Assignment2/ChickenInvaders -I/Users/yomnahisham/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/yomnahisham/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/yomnahisham/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/yomnahisham/Qt/6.7.0/macos/lib ../ChickenInvaders/chicken.h -o moc_chicken.cpp
 
@@ -757,6 +770,12 @@ moc_player.cpp: ../ChickenInvaders/player.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		../ChickenInvaders/chicken.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QTimer \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qtimer.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QLabel \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qlabel.h \
 		../../../../Qt/6.7.0/macos/libexec/moc
 	/Users/yomnahisham/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/yomnahisham/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/yomnahisham/Documents/GitHub/QT-Lab-Assignment2/ChickenInvaders -I/Users/yomnahisham/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/yomnahisham/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/yomnahisham/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/yomnahisham/Qt/6.7.0/macos/lib ../ChickenInvaders/player.h -o moc_player.cpp
 
@@ -784,32 +803,40 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean
 ####### Compile
 
 bullet.o: ../ChickenInvaders/bullet.cpp ../ChickenInvaders/bullet.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsItem \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
-		../ChickenInvaders/chicken.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsRectItem \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QImage \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
 		../ChickenInvaders/player.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsItem \
+		../ChickenInvaders/chicken.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QTimer \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qtimer.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QLabel \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qlabel.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QList \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qlist.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bullet.o ../ChickenInvaders/bullet.cpp
 
 chicken.o: ../ChickenInvaders/chicken.cpp ../ChickenInvaders/chicken.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsRectItem \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QTimer \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qtimer.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QLabel \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qlabel.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		../ChickenInvaders/player.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsItem
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o chicken.o ../ChickenInvaders/chicken.cpp
 
 main.o: ../ChickenInvaders/main.cpp ../ChickenInvaders/player.h \
@@ -817,15 +844,18 @@ main.o: ../ChickenInvaders/main.cpp ../ChickenInvaders/player.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		../ChickenInvaders/chicken.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QTimer \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qtimer.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QLabel \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qlabel.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qapplication.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsView \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsview.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QTimer \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qtimer.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
 		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QBrush \
@@ -842,9 +872,15 @@ player.o: ../ChickenInvaders/player.cpp ../ChickenInvaders/player.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
-		../ChickenInvaders/bullet.h \
 		../ChickenInvaders/chicken.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsRectItem \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QTimer \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qtimer.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QLabel \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qlabel.h \
+		../ChickenInvaders/bullet.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QImage \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
 		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QKeyEvent \
 		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \

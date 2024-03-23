@@ -6,10 +6,8 @@
 #include <QGraphicsPixmapItem>
 #include <player.h>
 
-Chicken::Chicken() : QObject(), QGraphicsPixmapItem(QPixmap("C:\\Users\\user\\Downloads\\chicken.png").scaled(90, 100))
+Chicken::Chicken() : QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/PinkcChick .png"))
 {
-
-
     // *******  Setting the postion of the enemy within the view dimensions ********
     int random_number = rand() % 700;
     setPos(random_number,0);
@@ -18,9 +16,7 @@ Chicken::Chicken() : QObject(), QGraphicsPixmapItem(QPixmap("C:\\Users\\user\\Do
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT (move()));
     timer->start(50);
-
-
-}
+ }
 
 
 // Function move: move the enemy downwards untill the end of the scene then remove it and delete it

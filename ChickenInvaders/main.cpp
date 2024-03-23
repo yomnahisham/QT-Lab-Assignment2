@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
     // *******  Create the Player ********
     Player * player = new Player();
-    player->setPos(view->width()/2, view->height()/2);
+    player->setPos(scene->width()/2, scene->height() - player->pixmap().height());
 
     // *******  Setting the foucs to the Player ********
     player->setFlag(QGraphicsItem::ItemIsFocusable);
