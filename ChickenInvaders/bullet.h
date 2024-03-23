@@ -11,7 +11,6 @@ class Bullet : public QObject, public QGraphicsPixmapItem {
 
 
 public:
-    Bullet(const QPointF& pos, const QImage& image, QGraphicsItem* parent = nullptr);
     Bullet();
 
 public slots:

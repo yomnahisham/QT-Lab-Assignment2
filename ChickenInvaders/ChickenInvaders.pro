@@ -12,17 +12,14 @@ SOURCES += \
     bullet.cpp \
     chicken.cpp \
     main.cpp \
-    mainwindow.cpp \
     player.cpp
 
 HEADERS += \
     bullet.h \
     chicken.h \
-    mainwindow.h \
     player.h
 
-FORMS += \
-    mainwindow.ui
+FORMS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

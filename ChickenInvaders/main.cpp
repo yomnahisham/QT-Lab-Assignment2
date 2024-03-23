@@ -7,6 +7,10 @@
 #include <QTimer>
 #include <QDebug>
 #include <QBrush>
+#include "global.h"
+
+bool isHit;
+
 
 int main(int argc, char *argv[])
 {

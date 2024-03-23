@@ -19,8 +19,6 @@ public:
     void decrease();
     void increase();
     void showGameOver();
-signals:
-    void gameOver(int score);
 public slots:
     void createChicken();
 
