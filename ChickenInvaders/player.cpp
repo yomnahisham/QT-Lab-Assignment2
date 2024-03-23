@@ -16,13 +16,13 @@ void Player::keyPressEvent(QKeyEvent *event)
     {
         if(x()>0)
         {
-            setPos(x()-10,y());
+            setPos(x()-20,y());
         }
     }
     else if(event->key()== Qt::Key_Right)
 
     { if(x()+100<1000)
-            setPos(x()+10,y());
+            setPos(x()+20,y());
     }
     else if(event->key()== Qt::Key_Space)
     {
