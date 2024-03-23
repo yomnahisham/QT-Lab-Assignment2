@@ -13,24 +13,24 @@ int main(int argc, char *argv[])
 
     // *******  Create the View ********
     QGraphicsView * view = new QGraphicsView();
-    view->setFixedSize(800, 600);
+    view->setFixedSize(1000, 800);
     view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     // ******* Create the Scene ********
     QGraphicsScene * scene =  new QGraphicsScene() ;
-    scene->setSceneRect(0, 0, 800, 600);
+    scene->setSceneRect(0, 0, 1000, 800);
 
     // *******  Create the Player ********
     Player * player = new Player();
-    player->setPos(scene->width()/2, scene->height() - player->pixmap().height());
+    player->setPos(scene->width()/2, (scene->height() - player->pixmap().height())/2);
 
     // *******  Setting the foucs to the Player ********
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
 
     // *******  Adjust the location of the Player (middle of the screen) ********
-    player->setPos(view->width()/2, view->height()-player->y()/2);
+    //player->setPos(view->width()/2, view->height()-player->y()/2);
     scene->addItem(player);
 
     // *******   Assign scene to the view   ***************
