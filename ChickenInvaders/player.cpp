@@ -13,6 +13,8 @@ Player::Player(): QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.p
 
     bulletsound = new QMediaPlayer();
     bulletsound-> setSource(QUrl("C:\\Users\\user\\Downloads\\laser_sound.wav"));
+
+
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
@@ -41,6 +43,8 @@ void Player::keyPressEvent(QKeyEvent *event)
             bulletsound->setPosition(0);
         } else if (bulletsound->mediaStatus() == QMediaPlayer::StoppedState){
             bulletsound->play();
+
+
         }
 
 

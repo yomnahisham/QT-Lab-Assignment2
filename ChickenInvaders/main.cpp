@@ -1,6 +1,5 @@
 #include "player.h"
 #include "status.h"
-#include "sound.h"
 #include <QApplication>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsTextItem>
