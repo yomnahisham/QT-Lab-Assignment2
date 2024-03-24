@@ -34,18 +34,13 @@ int main(int argc, char *argv[])
     QGraphicsTextItem* scoreText = new QGraphicsTextItem();
     QGraphicsTextItem* healthText = new QGraphicsTextItem();
 
+    // adding health and score to scene
     scene->addItem(scoreText);
     scene->addItem(healthText);
 
+    // setting status values
     Status::setHealthText(healthText);
     Status::setScoreText(scoreText);
-
-    QAudioOutput* audioOutput = new QAudioOutput();
-    QMediaPlayer* soundEffect = new QMediaPlayer();
-    soundEffect->setAudioOutput(audioOutput);
-    audioOutput->setVolume(50);
-    soundEffect->setLoops(1000);
-    soundEffect->play();
 
     // creating the player
     Player *player = new Player();
@@ -67,9 +62,6 @@ int main(int argc, char *argv[])
     QTimer * time = new QTimer();
     QObject::connect(time, SIGNAL(timeout()), player, SLOT(createChicken()));
     time->start(2000);
-
-    //sound effects
-    QMediaPlayer *MediaPlayer = new QMediaPlayer();
 
 
     return a.exec();

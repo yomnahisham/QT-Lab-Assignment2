@@ -8,51 +8,30 @@
 #include <QDebug>
 #include <QMediaPlayer>
 
-
-
-Player::Player(): QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.png").scaled(70, 80)) {
-
-    bulletsound = new QMediaPlayer();
-    bulletsound-> setSource(QUrl("C:\\Users\\user\\Downloads\\laser_sound.wav"));
-}
+Player::Player(): QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.png").scaled(70, 80)) {}
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
-    if(event->key()== Qt::Key_Left)
-    {
-        if(x()>0)
-        {
+    // if left key pressed, move player left
+    if(event->key()== Qt::Key_Left){
+        if(x()>0){
             setPos(x()-20,y());
         }
-    }
-    else if(event->key()== Qt::Key_Right)
-
-    { if(x()+100<1000)
+    } else if (event->key()== Qt::Key_Right) { // if right key pressed, move right
+            if(x()+100<1000)
             setPos(x()+20,y());
-    }
-    else if(event->key()== Qt::Key_Space)
-    {
+    } else if(event->key()== Qt::Key_Space) { // if space key pressed, fire bullet
+
+        // creating bullet and setting position
         Bullet * bullet = new Bullet();
         bullet->setPos(x()+30,y());
         scene()->addItem(bullet);
-
-        //play bullet sound effect
-        if (bulletsound->mediaStatus() == QMediaPlayer::PlayingState){
-
-            bulletsound->setPosition(0);
-        } else if (bulletsound->mediaStatus() == QMediaPlayer::StoppedState){
-            bulletsound->play();
-        }
-
-
-
     }
-
 }
-
 
 void Player::createChicken(){
 
+    // creating chicken enemies
     Chicken* chick = new Chicken();
     scene()->addItem(chick);
 
