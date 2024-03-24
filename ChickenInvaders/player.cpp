@@ -9,6 +9,7 @@
 #include <QMediaPlayer>
 
 
+
 Player::Player(): QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.png").scaled(70, 80)) {
 
     bulletsound = new QMediaPlayer();
