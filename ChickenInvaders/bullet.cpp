@@ -38,7 +38,7 @@ void Bullet:: move()
 
             QAudioOutput* audioKill = new QAudioOutput();
             QMediaPlayer* soundKill = new QMediaPlayer();
-            soundKill->setSource(QUrl("qrc:/resources/sounds/kill.mp3"));
+            soundKill->setSource(QUrl("qrc:/resources/sounds/chickenKill.mp3"));
             soundKill->setAudioOutput(audioKill);
             audioKill->setVolume(50);
             soundKill->play();

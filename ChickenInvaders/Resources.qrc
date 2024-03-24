@@ -4,6 +4,6 @@
         <file>img/red_laser.png</file>
         <file>img/ship.png</file>
         <file>sounds/lasershot.mp3</file>
-        <file>sounds/kill.mp3</file>
+        <file>sounds/chickenKill.mp3</file>
     </qresource>
 </RCC>

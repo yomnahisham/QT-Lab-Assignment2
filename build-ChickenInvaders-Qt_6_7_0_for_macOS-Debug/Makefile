@@ -1200,7 +1200,7 @@ qrc_Resources.cpp: ../ChickenInvaders/Resources.qrc \
 		../ChickenInvaders/img/PinkcChick\ .png \
 		../ChickenInvaders/img/red_laser.png \
 		../ChickenInvaders/img/ship.png \
-		../ChickenInvaders/sounds/kill.mp3 \
+		../ChickenInvaders/sounds/chickenKill.mp3 \
 		../ChickenInvaders/sounds/lasershot.mp3
 	/Users/yomnahisham/Qt/6.7.0/macos/libexec/rcc -name Resources --no-zstd ../ChickenInvaders/Resources.qrc -o qrc_Resources.cpp
 
