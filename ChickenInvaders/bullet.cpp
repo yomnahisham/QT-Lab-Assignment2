@@ -5,7 +5,6 @@
 #include <QGraphicsScene>
 #include <QTimer>
 #include <QList>
-#include "sound.h"
 #include <QMediaPlayer>
 
 Bullet::Bullet() : QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/red_laser.png"))
