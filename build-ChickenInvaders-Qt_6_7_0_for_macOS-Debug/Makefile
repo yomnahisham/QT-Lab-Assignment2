@@ -1199,7 +1199,9 @@ qrc_Resources.cpp: ../ChickenInvaders/Resources.qrc \
 		../../../../Qt/6.7.0/macos/libexec/rcc \
 		../ChickenInvaders/img/PinkcChick\ .png \
 		../ChickenInvaders/img/red_laser.png \
-		../ChickenInvaders/img/ship.png
+		../ChickenInvaders/img/ship.png \
+		../ChickenInvaders/sounds/kill.mp3 \
+		../ChickenInvaders/sounds/lasershot.mp3
 	/Users/yomnahisham/Qt/6.7.0/macos/libexec/rcc -name Resources --no-zstd ../ChickenInvaders/Resources.qrc -o qrc_Resources.cpp
 
 compiler_moc_header_make_all: moc_bullet.cpp moc_chicken.cpp moc_player.cpp
@@ -1291,7 +1293,9 @@ bullet.o: ../ChickenInvaders/bullet.cpp ../ChickenInvaders/bullet.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QList \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qlist.h
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qlist.h \
+		../../../../Qt/6.7.0/macos/lib/QtMultimedia.framework/Headers/QAudioOutput \
+		../../../../Qt/6.7.0/macos/lib/QtMultimedia.framework/Headers/qaudiooutput.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bullet.o ../ChickenInvaders/bullet.cpp
 
 chicken.o: ../ChickenInvaders/chicken.cpp ../ChickenInvaders/chicken.h \
@@ -1341,7 +1345,9 @@ main.o: ../ChickenInvaders/main.cpp ../ChickenInvaders/player.h \
 		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QBrush \
 		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QUrl \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qurl.h
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qurl.h \
+		../../../../Qt/6.7.0/macos/lib/QtMultimedia.framework/Headers/QAudioOutput \
+		../../../../Qt/6.7.0/macos/lib/QtMultimedia.framework/Headers/qaudiooutput.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../ChickenInvaders/main.cpp
 
 player.o: ../ChickenInvaders/player.cpp ../ChickenInvaders/player.h \

@@ -10,6 +10,7 @@
 #include <QBrush>
 #include <QUrl>
 #include <QMediaPlayer>
+#include <QAudioOutput>
 #include <QApplication>
 
 
@@ -38,6 +39,13 @@ int main(int argc, char *argv[])
 
     Status::setHealthText(healthText);
     Status::setScoreText(scoreText);
+
+    QAudioOutput* audioOutput = new QAudioOutput();
+    QMediaPlayer* soundEffect = new QMediaPlayer();
+    soundEffect->setAudioOutput(audioOutput);
+    audioOutput->setVolume(50);
+    soundEffect->setLoops(1000);
+    soundEffect->play();
 
     // creating the player
     Player *player = new Player();

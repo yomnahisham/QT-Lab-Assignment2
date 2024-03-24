@@ -3,7 +3,7 @@
         <file>img/PinkcChick .png</file>
         <file>img/red_laser.png</file>
         <file>img/ship.png</file>
-        <file>sounds/chickendead.mp3</file>
         <file>sounds/lasershot.mp3</file>
+        <file>sounds/kill.mp3</file>
     </qresource>
 </RCC>
