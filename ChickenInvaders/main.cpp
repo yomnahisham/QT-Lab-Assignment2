@@ -1,5 +1,6 @@
 #include "player.h"
 #include "status.h"
+#include "sound.h"
 #include <QApplication>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsTextItem>
@@ -8,10 +9,12 @@
 #include <QTimer>
 #include <QDebug>
 #include <QBrush>
-#include "global.h"
+#include <QUrl>
+#include <QMediaPlayer>
+#include <QApplication>
+
 
 bool isHit;
-
 
 int main(int argc, char *argv[])
 {
@@ -58,5 +61,11 @@ int main(int argc, char *argv[])
     QObject::connect(time, SIGNAL(timeout()), player, SLOT(createChicken()));
     time->start(2000);
 
+    //sound effects
+    QMediaPlayer *MediaPlayer = new QMediaPlayer();
+
+
     return a.exec();
+
+
 }

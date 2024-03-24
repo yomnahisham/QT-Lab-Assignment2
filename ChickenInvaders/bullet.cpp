@@ -5,13 +5,17 @@
 #include <QGraphicsScene>
 #include <QTimer>
 #include <QList>
+#include "sound.h"
+#include <QMediaPlayer>
 
 Bullet::Bullet() : QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/red_laser.png"))
 {
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
     timer->start(50);
+
 }
+
 
 void Bullet:: move()
 {

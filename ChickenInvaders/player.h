@@ -1,9 +1,10 @@
-
 #ifndef PLAYER_H
 #define PLAYER_H
 #include <QGraphicsItem>
 #include <QObject>
 #include "chicken.h"
+#include <QMediaPlayer>
+
 
 class Player: public QObject, public QGraphicsPixmapItem
 {
@@ -11,11 +12,16 @@ class Player: public QObject, public QGraphicsPixmapItem
 private:
     QGraphicsTextItem* healthText;
     QGraphicsTextItem* scoreText;
+    QMediaPlayer * bulletsound;
+
+
 public:
     Player();
     void keyPressEvent(QKeyEvent * event);
+
 public slots:
     void createChicken();
+
 };
 
 
