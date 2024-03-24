@@ -8,7 +8,19 @@
 #include <QDebug>
 #include <QMediaPlayer>
 
+<<<<<<< HEAD
 Player::Player(): QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.png").scaled(70, 80)) {}
+=======
+
+
+Player::Player(): QObject(), QGraphicsPixmapItem(QPixmap(":/resources/img/ship.png").scaled(70, 80)) {
+
+    bulletsound = new QMediaPlayer();
+    bulletsound-> setSource(QUrl("C:\\Users\\user\\Downloads\\laser_sound.wav"));
+
+
+}
+>>>>>>> cb2b3711257566c6e4fc3f8ff5a0d9e371713980
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
@@ -26,6 +38,22 @@ void Player::keyPressEvent(QKeyEvent *event)
         Bullet * bullet = new Bullet();
         bullet->setPos(x()+30,y());
         scene()->addItem(bullet);
+<<<<<<< HEAD
+=======
+
+        //play bullet sound effect
+        if (bulletsound->mediaStatus() == QMediaPlayer::PlayingState){
+
+            bulletsound->setPosition(0);
+        } else if (bulletsound->mediaStatus() == QMediaPlayer::StoppedState){
+            bulletsound->play();
+
+
+        }
+
+
+
+>>>>>>> cb2b3711257566c6e4fc3f8ff5a0d9e371713980
     }
 }
 
